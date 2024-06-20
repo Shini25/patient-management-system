@@ -34,6 +34,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public boolean usernameExists(String username) {
+        return userRepository.findByUsername(username).isPresent();
+    }
+
     public void deleteUser(String username) {
         userRepository.deleteById(username);
     }

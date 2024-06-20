@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import leopard.PatientManagement.enums.PatientGender;
+import leopard.PatientManagement.enums.PatientCategory;
 
 import java.time.LocalDate;
 
@@ -29,10 +30,14 @@ public class Patient {
 
     private PatientGender gender;
 
+    private PatientCategory patientCategory;
+    private boolean consultationStatus;
+    private boolean appointmentStatus;
+
     // Constructor
     public Patient() {}
 
-    public Patient(String firstName, String lastName, LocalDate dateOfBirth, String address, String email, String phoneNumber, PatientGender gender) {
+    public Patient(String firstName, String lastName, LocalDate dateOfBirth, String address, String email, String phoneNumber, PatientGender gender, PatientCategory patientCategory, boolean consultationStatus, boolean appointmentStatus) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -40,6 +45,9 @@ public class Patient {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
+        this.patientCategory = patientCategory;
+        this.consultationStatus = consultationStatus;
+        this.appointmentStatus = appointmentStatus;
     }
 
     // Getters and setters
@@ -105,5 +113,29 @@ public class Patient {
 
     public void setGender(PatientGender gender) {
         this.gender = gender;
+    }
+
+    public PatientCategory getPatientCategory() {
+        return patientCategory;
+    }
+
+    public void setPatientCategory(PatientCategory patientCategory) {
+        this.patientCategory = patientCategory;
+    }
+
+    public boolean isConsultationStatus() {
+        return consultationStatus;
+    }
+
+    public void setConsultationStatus(boolean consultationStatus) {
+        this.consultationStatus = consultationStatus;
+    }
+
+    public boolean isAppointmentStatus() {
+        return appointmentStatus;
+    }
+
+    public void setAppointmentStatus(boolean appointmentStatus) {
+        this.appointmentStatus = appointmentStatus;
     }
 }

@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class Consultation {

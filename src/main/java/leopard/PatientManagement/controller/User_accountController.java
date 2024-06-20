@@ -34,6 +34,12 @@ public class User_accountController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/check-username")
+    public ResponseEntity<Boolean> checkUsernameExists(@RequestParam String username) {
+        boolean exists = userService.usernameExists(username);
+        return ResponseEntity.ok(exists);
+    }
+
     @PostMapping("/adduser")
     public ResponseEntity<User_account> addUser(@RequestBody User_account user) {
         User_account savedUser = userService.saveUser(user);

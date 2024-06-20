@@ -28,12 +28,14 @@ public class Doctor {
 
     private LocalDate dateOfBirth;
 
+    private boolean appointmentState;  // Added boolean field
+
     // Constructors, getters, and setters
 
     public Doctor() {
     }
 
-    public Doctor(String firstName, String lastName, String specialty, String email, String contact, String address, LocalDate dateOfBirth) {
+    public Doctor(String firstName, String lastName, String specialty, String email, String contact, String address, LocalDate dateOfBirth, boolean appointmentState) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.specialty = specialty;
@@ -41,6 +43,7 @@ public class Doctor {
         this.contact = contact;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
+        this.appointmentState = appointmentState;  // Initialize in constructor
     }
 
     // Getters and setters
@@ -101,12 +104,19 @@ public class Doctor {
         this.address = address;
     }
 
-
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public boolean isAppointmentState() {
+        return appointmentState;
+    }
+
+    public void setAppointmentState(boolean appointmentState) {
+        this.appointmentState = appointmentState;
     }
 }
